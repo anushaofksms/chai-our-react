@@ -1,5 +1,5 @@
 .kg-item {
-  background-color: khaki !important;
+  /* background-color: khaki !important; */
 
 }
 .kg-apan {
@@ -9,4 +9,8 @@
 
 .kg-button {
   float:right;
+}
+
+.active-food {
+  background-color: blueviolet;
 }
