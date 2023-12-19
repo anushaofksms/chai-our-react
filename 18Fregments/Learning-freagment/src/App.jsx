@@ -1,7 +1,8 @@
 import "./App.css";
 import ErrorMessage from "./Components/ErrorMessage";
 import FoodItems from "./Components/FoodItems";
-
+import Container from "./Components/Container";
+import FoodInput from "./Components/FoodInput";
 function App() {
   // let foodItems = [];
   let foodItems = ["Sabji", "Roti", "Salad", "Milk", "Veggies", "Ghee"];
@@ -10,11 +11,18 @@ function App() {
   //   return <h3>I am still hungry</h3>;
   // }
   return (
-    <div>
-      <div className="food-heading">Healthy Food</div>
-      <ErrorMessage items={foodItems}></ErrorMessage>
-      <FoodItems items={foodItems}></FoodItems>
-    </div>
+    <>
+      <Container>
+        <h1 className="food-heading">Healthy Food</h1>
+        <ErrorMessage items={foodItems}></ErrorMessage>
+        <FoodInput />
+        <FoodItems items={foodItems}></FoodItems>
+      </Container>
+
+      <Container>
+        <p>Above is the Healthy food which is good for your health</p>
+      </Container>
+    </>
   );
 }
 
