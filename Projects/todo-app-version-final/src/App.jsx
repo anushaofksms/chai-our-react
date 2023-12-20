@@ -22,9 +22,24 @@ function App() {
   ];
   // const [toDoItems, setToDOItem] = useState([]);    if initialToDoItems is empty we are showing welcomemeesage
   const [toDoItems, setToDOItem] = useState(initialToDoItems);
+  // handleNewItem method below Update state from previous state: some time we wont get data propely bcz react is asyn suppose its performing multiple task and excicuting first one till that time new data is not updated so new data will not come so we will do with diff approach
+  // const handleNewItem = (itemName, itemdate) => {
+  //   const newToDoItem = [...toDoItems, { name: itemName, dueDate: itemdate }];
+  //   setToDOItem(newToDoItem);
+  // };
+
+  // const handleNewItem = (itemName, itemdate) => {
+  //   setToDOItem((currValue) => {
+  //     const newToDoItem = [...currValue, { name: itemName, dueDate: itemdate }];
+  //     return newToDoItem;
+  //   });
+  // };
+
   const handleNewItem = (itemName, itemdate) => {
-    const newToDoItem = [...toDoItems, { name: itemName, dueDate: itemdate }];
-    setToDOItem(newToDoItem);
+    setToDOItem((currValue) => [
+      ...currValue,
+      { name: itemName, dueDate: itemdate },
+    ]);
   };
 
   const consthandleDeleteItem = (toDoitemName) => {

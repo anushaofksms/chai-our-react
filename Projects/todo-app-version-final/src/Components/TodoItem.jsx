@@ -3,7 +3,7 @@ import { MdDelete } from "react-icons/md";
 
 function TodoItem({ todoName, todoDate, onDeleteClick }) {
   return (
-    <div>
+    <>
       <div className="container">
         <div className="row kg-row">
           <div className="col-6">{todoName}</div>
@@ -21,7 +21,7 @@ function TodoItem({ todoName, todoDate, onDeleteClick }) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
