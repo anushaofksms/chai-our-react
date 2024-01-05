@@ -1,0 +1,16 @@
+
+input{
+  width: 100% !important;
+}
+
+.todo-container{
+  text-align: center;
+}
+
+.kg-row {
+  margin: 10px 3px;
+}
+
+.kgButton {
+  min-width: 80px;
+}
