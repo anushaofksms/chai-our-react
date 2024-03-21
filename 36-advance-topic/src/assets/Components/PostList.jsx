@@ -12,14 +12,20 @@ const PostList = () => {
   useEffect(() => {
     setFetching(true);
     // console.log("fecth started");
-
-    fetch("https://dummyjson.com/posts")
+    const controller = new AbortController();
+    const signal = controller.signal;
+    fetch("https://dummyjson.com/posts", { signal })
       .then((res) => res.json())
       .then((data) => {
         addInitialPost(data.posts);
         setFetching(false);
         // console.log("fecth returned");
       });
+
+    return () => {
+      console.log("Cleaning up");
+      controller.abort();
+    };
     // console.log("fecth ended");
   }, []);
 
